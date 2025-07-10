@@ -30,7 +30,6 @@ The system queries structured herb data and natural language responses from AI, 
 | Backend      | Spring Boot (Microservices), REST APIs                                 |
 | AI Model     | Gemini API (fine-tuned with 20+ contextual herb examples)              |
 | Database     | Google Firebase Firestore (NoSQL)                                      |
-| Hosting      | (Add if hosted: e.g., Netlify, Firebase Hosting, etc.)                 |
 
 ---
 
