@@ -1,6 +1,15 @@
 import { toast } from "react-toastify";
 import { firestore } from "../firebaseConfig";
-import { addDoc, collection, doc, getDoc, onSnapshot } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  onSnapshot,
+  query,
+  where,
+} from "firebase/firestore";
 interface PostObject {
   [key: string]: any;
 }
@@ -59,7 +68,7 @@ export const getPlants = (setAllPlants: Function) => {
 
 export const getSinglePlant = async (id: string, setSinglePlant: Function) => {
   try {
-    const docRef = doc(plantCollectionRef, id); 
+    const docRef = doc(plantCollectionRef, id);
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
@@ -74,7 +83,26 @@ export const getSinglePlant = async (id: string, setSinglePlant: Function) => {
   }
 };
 
+export const checkPlantExists = async (
+  userId: string,
+  plantName: string
+): Promise<boolean> => {
+  try {
+    const q = query(
+      plantCollectionRef,
+      where("userId", "==", userId),
+      where("name", "==", plantName)
+    );
 
+    const querySnapshot = await getDocs(q);
 
-
-
+    if (!querySnapshot.empty) {
+      return true;
+    } else {
+      return false;
+    }
+  } catch (error) {
+    console.error("Error checking plant existence:", error);
+    return false;
+  }
+};

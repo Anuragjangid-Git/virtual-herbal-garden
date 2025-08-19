@@ -1,5 +1,5 @@
 import { LogoutApi } from "../api/authApi";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Edit2,
   MapPin,
@@ -10,6 +10,7 @@ import {
   Camera,
   Calendar,
   Heart,
+  Home,
 } from "lucide-react";
 import { useMemo, useState } from "react";
 import { getCurrentUser } from "../api/firestoreApi";
@@ -73,14 +74,20 @@ function Profile() {
                 </div>
               </div>
             </div>
-            <div className="flex gap-4">
-              <button className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
+            <div className="flex  gap-4  items-center">
+              {/* <button className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2">
                 <Edit2 className="h-4 w-4" />
                 Edit Profile
-              </button>
+              </button> */}
+              <Link to="/">
+                <p className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-red-500 transition-colors flex items-center gap-2">
+                  <Home className="w-4 h-4 " />
+                  Home
+                </p>
+              </Link>
               <button
                 onClick={logOut}
-                className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors flex items-center gap-2"
+                className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-red-500 transition-colors flex items-center gap-2"
               >
                 <LogOut className="h-4 w-4" />
                 Logout
@@ -89,7 +96,7 @@ function Profile() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-4 mt-8">
+          {/* <div className="grid grid-cols-3 gap-4 mt-8">
             <div className="text-center p-4 bg-green-50 rounded-lg">
               <Leaf className="h-6 w-6 text-green-600 mx-auto mb-2" />
               <div className="text-2xl font-bold text-green-600">{18}</div>
@@ -105,7 +112,7 @@ function Profile() {
               <div className="text-2xl font-bold text-green-600">{5}</div>
               <div className="text-sm text-gray-600">Reviews</div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

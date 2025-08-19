@@ -1,9 +1,9 @@
 import { Search, Filter, Leaf, PersonStanding } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import backGround from '../Images/2629ef31-5d6d-4516-875a-46ff5cc514a8.png'
+import backGround from '/Images/2629ef31-5d6d-4516-875a-46ff5cc514a8.png'
 import { useMemo, useState } from 'react';
 import { getPlants } from '../api/firestoreApi';
-import PlantsCard from '../components/PlantsCard';
+import PlantsCard from '../components/collections/PlantsCard';
 
 function Home() {
 
@@ -22,6 +22,7 @@ const [allPlants, setAllPlants] = useState<
         userId: string;
         uses: string;
         wateringNeeds: string;
+        id: string;
     }[]
 >([]);
 
@@ -52,7 +53,7 @@ const [allPlants, setAllPlants] = useState<
         {/* Navigation Links */}
         <div className="absolute top-4 right-4 z-10 flex gap-4">
           <Link
-            to="/explore"
+            to="/ai-chatbot"
             className="flex items-center gap-2 text-white bg-black/30 px-4 py-2 rounded-full hover:bg-black/50 transition-colors"
           >
             <Search className="h-5 w-5" />
@@ -94,7 +95,7 @@ const [allPlants, setAllPlants] = useState<
       </div>
 
       {/* Featured Plants */}
-      <div className="flex">
+      <div className="flex overflow-x-auto py-8 px-4">
         {allPlants.map((plants)=>{
             return(
                 <PlantsCard plants={plants} />

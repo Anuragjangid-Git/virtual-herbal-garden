@@ -3,7 +3,7 @@ import { onAuthStateChanged } from "firebase/auth"
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import {auth} from '../firebaseConfig'
-import Loader from "../components/Loader"
+import Loader from "../components/ui/Loader"
 import RegisterComponent from "../components/RegisterComponent"
 const Register = () => {
   let navigate = useNavigate()

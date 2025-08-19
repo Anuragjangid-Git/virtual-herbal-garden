@@ -1,4 +1,4 @@
-import PlantDetailCard from '../components/PlantDetailCard';
+import PlantDetailCard from '../components/collections/PlantDetailCard';
 import { ArrowLeft } from 'lucide-react';
 import { useEffect,useState } from 'react';
 import { Link } from 'react-router-dom';

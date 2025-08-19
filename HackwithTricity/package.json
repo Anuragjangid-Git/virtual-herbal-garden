@@ -10,7 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.2.3",
     "axios": "^1.8.4",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "firebase": "^11.7.1",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
@@ -18,7 +21,9 @@
     "react-markdown": "^10.1.0",
     "react-router-dom": "^6.22.3",
     "react-toastify": "^11.0.5",
-    "styled-components": "^6.1.18"
+    "shadcn-ui": "^0.9.5",
+    "styled-components": "^6.1.18",
+    "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
