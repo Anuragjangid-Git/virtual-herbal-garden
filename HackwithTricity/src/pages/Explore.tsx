@@ -1,18 +1,21 @@
 import axios from "axios";
-import { Send, Bot, ArrowLeft } from "lucide-react";
+import { Send, Bot, ArrowLeft, } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
+import Loader from "../components/Loader";
 
 function PlantAssistant() {
   const [plantName, setPlantName] = useState("");
   const [generatedReply, setGeneratedReply] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleGenerate = async () => {
     if (!plantName) {
       alert("Please enter a query");
       return;
     }
+    setLoading(true);
     try {
       const response = await axios.post(
         "http://localhost:8080/api/response/generating",
@@ -27,8 +30,8 @@ function PlantAssistant() {
       );
     } catch (error) {
       console.error(error);
-    }
-    finally {
+    } finally {
+      setLoading(false);
       setPlantName("");
     }
   };
@@ -64,12 +67,17 @@ function PlantAssistant() {
             {/* Messages */}
             <div className="h-[500px] overflow-y-auto p-6">
               <div className="prose prose-green max-w-none">
-                <ReactMarkdown>{generatedReply}</ReactMarkdown>
+                {loading ? (
+                  <div className="flex items-center gap-2  text-green-600">
+                   <Loader/>
+                  </div>
+                ) : (
+                  <ReactMarkdown>{generatedReply}</ReactMarkdown>
+                )}
               </div>
             </div>
 
             {/* Input */}
-
             <div className="flex gap-4 p-6 border-t">
               <input
                 value={plantName}
@@ -77,10 +85,12 @@ function PlantAssistant() {
                 type="text"
                 placeholder="Ask about any plant..."
                 className="flex-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                disabled={loading}
               />
               <button
                 onClick={handleGenerate}
                 className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                disabled={loading}
               >
                 <Send className="h-5 w-5" />
                 Send
