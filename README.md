@@ -49,13 +49,16 @@ The system queries structured herb data and natural language responses from AI, 
 ## 📸 Screenshots  
 
 ### 🏡 Home Page  
-<img src="./screenshots/home.png" alt="Home Page" width="700"/>
+<img width="1898" height="1043" alt="home" src="https://github.com/user-attachments/assets/4d8170a3-a90c-4bfc-acdc-54e499ee9b8f" />
+
 
 ### 📚 Collection Page  
-<img src="./screenshots/collection.png" alt="Collection Page" width="700"/>
+<img width="1899" height="1048" alt="collection" src="https://github.com/user-attachments/assets/833b35f8-e68a-4995-8a1a-2330f7db11af" />
+
 
 ### 🤖 AI Assistance Page  
-<img src="./screenshots/ai-assistant.png" alt="AI Assistance Page" width="700"/>
+
+<img width="1918" height="1048" alt="ai-assistance" src="https://github.com/user-attachments/assets/5f09dc6b-a0fc-45bf-b176-ee21f8f61864" />
 
 ---
 
