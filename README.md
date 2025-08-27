@@ -56,6 +56,7 @@ The system queries structured herb data and natural language responses from AI, 
 
 ### 🤖 AI Assistance Page  
 <img src="./screenshots/ai-assistant.png" alt="AI Assistance Page" width="700"/>
+
 ---
 
 ## 🔮 Future Improvements
