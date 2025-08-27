@@ -47,26 +47,6 @@ The system queries structured herb data and natural language responses from AI, 
 
 ---
 
-## 📁 Project Structure
-
-Virtual-Herbal-Garden/
-│
-├── client/ # React.js Frontend
-│ ├── components/
-│ ├── pages/
-│ └── services/
-│
-├── server/ # Spring Boot Backend
-│ ├── controller/
-│ ├── service/
-│ ├── model/
-│ └── config/
-│
-├── firebase/ # Firestore Database Rules / Seed Data
-│
-└── README.md
-
----
 
 ## 🔮 Future Improvements
 
