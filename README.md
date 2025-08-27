@@ -46,7 +46,17 @@ The system queries structured herb data and natural language responses from AI, 
    - Precautions (if applicable)
 
 ---
+## 📸 Screenshots  
 
+### 🏡 Home Page  
+<img src="./screenshots/home.png" alt="Home Page" width="700"/>
+
+### 📚 Collection Page  
+<img src="./screenshots/collection.png" alt="Collection Page" width="700"/>
+
+### 🤖 AI Assistance Page  
+<img src="./screenshots/ai-assistant.png" alt="AI Assistance Page" width="700"/>
+---
 
 ## 🔮 Future Improvements
 
